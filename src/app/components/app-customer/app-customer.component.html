@@ -1,1 +1,43 @@
-Dit is de customer component
+<h1>Customers</h1>
+<button pButton type="button" class="ui-button-success" icon="fa fa-plus" (click)="showAddDialog()" label="Add"></button>
+<div class="margin-top">
+    <p-table [columns]="cols" [value]="customers" selectionMode="single" [paginator]="true" [rows]="10" [responsive]="true" paginatorPosition="bottom">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <!-- <td>
+                    <button pButton type="button" icon="fa fa-pencil" (click)="selectCustomer(customer)"></button>
+                    <button pButton type="button" class="ui-button-info" icon="fa fa-eye" [routerLink]="[customer.id, 'history']"></button>
+                    <button pButton type="button" class="ui-button-danger" icon="fa fa-trash" (click)="deleteCustomer(customer)"></button>
+                </td> -->
+            <!-- <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td> -->
+            <tr [pSelectableRow]="rowData">
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+
+    <p-dialog header="{{newCustomer ? 'Add' : 'Edit'}} Customer" [(visible)]="displayDialog" [responsive]="true" showEffect="fade"
+        [modal]="true" [dismissableMask]="true" [baseZIndex]="1040" [width]="400">
+        <div *ngIf="customer">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control input-sm" placeholder="Name" id="name" [(ngModel)]="customer.name">
+            </div>
+        </div>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-helper-clearfix">
+                <button type="button" pButton icon="fa fa-check" (click)="submitCustomer(customer)" label="Save"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+</div>

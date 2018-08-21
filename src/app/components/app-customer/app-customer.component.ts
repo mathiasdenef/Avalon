@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Customer } from '../../classes/customer';
+import { Column } from '../../classes/column';
+import { CustomerService } from '../../services/customer.service';
 
 @Component({
     selector: 'app-customer',
@@ -7,6 +10,28 @@ import { Component } from '@angular/core';
 })
 export class AppCustomerComponent  {
 
-  
-    constructor() { }
+    customers: Customer[];
+    cols: Column[];
+
+    constructor(private customerService: CustomerService) { }
+
+    ngOnInit() {
+        this.customerService.getAllCustomers().subscribe(
+            res => {
+                console.log(res);
+                this.customers = res;
+            }
+        )
+
+        this.cols = [
+            {
+                field: "id",
+                header: "Id"
+            },
+            {
+                field: "name",
+                header: "Name"
+            }
+        ]
+    }
 }

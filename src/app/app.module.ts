@@ -13,10 +13,12 @@ import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.
 import { CoreModule } from '../core/core.module';
 import { DemoModule } from '../demo/demo.module';
 import { AppCustomerComponent } from './components/app-customer/app-customer.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
         BrowserModule,
+        SharedModule,
         AppRoutes,
         CoreModule,
         DemoModule,
