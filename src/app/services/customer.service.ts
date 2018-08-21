@@ -11,6 +11,6 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getAllCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('/api/customers');
+    return this.http.get<Customer[]>('/Restapi/v1/customers');
   }
 }

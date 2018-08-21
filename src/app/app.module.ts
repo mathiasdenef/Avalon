@@ -12,8 +12,8 @@ import { NodeService } from './demo/service/nodeservice';
 import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.component';
 import { CoreModule } from '../core/core.module';
 import { DemoModule } from '../demo/demo.module';
-import { AppCustomerComponent } from './components/app-customer/app-customer.component';
 import { SharedModule } from '../shared/shared.module';
+import { TournamentModule } from '../tournament/tournament.module';
 
 @NgModule({
     imports: [
@@ -22,11 +22,11 @@ import { SharedModule } from '../shared/shared.module';
         AppRoutes,
         CoreModule,
         DemoModule,
+        TournamentModule,
     ],
     declarations: [
         AppComponent,
         AppDashboardComponent,
-        AppCustomerComponent,
     ],
     providers: [
         // { provide: LocationStrategy, useClass: HashLocationStrategy },

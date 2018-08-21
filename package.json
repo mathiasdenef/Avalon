@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "build-server": "ng serve -o && node server.js",
-    "start": "ng serve --proxy-config proxy.config.json",
+    "start": "ng serve -o --proxy-config proxy.config.json --host bebru031.intl.att.com",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

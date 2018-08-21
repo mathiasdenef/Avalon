@@ -1,5 +1,5 @@
-import {Routes, RouterModule} from '@angular/router';
-import {ModuleWithProviders} from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.component';
 import { DashboardDemoComponent } from './demo/view/dashboarddemo.component';
 import { SampleDemoComponent } from './demo/view/sampledemo.component';
@@ -15,27 +15,36 @@ import { ChartsDemoComponent } from './demo/view/chartsdemo.component';
 import { FileDemoComponent } from './demo/view/filedemo.component';
 import { UtilsDemoComponent } from './demo/view/utilsdemo.component';
 import { DocumentationComponent } from './demo/view/documentation.component';
-import { AppCustomerComponent } from './components/app-customer/app-customer.component';
+import { TournamentComponent } from '../tournament/components/tournament/tournament.component';
+import { TournamentPouleComponent } from '../tournament/components/tournament-poule/tournament-poule.component';
+import { TournamentKnockoutComponent } from '../tournament/components/tournament-knockout/tournament-knockout.component';
+import { TournamentLeaderboardComponent } from '../tournament/components/tournament-leaderboard/tournament-leaderboard.component';
 
 export const routes: Routes = [
-    {path: 'dashboard', component: AppDashboardComponent},
-    {path: 'customer', component: AppCustomerComponent},
+    {
+        path: 'tournaments', children: [
+            { path: '', component: TournamentComponent },
+            { path: 'poules', component: TournamentPouleComponent },
+            { path: 'knockouts', component: TournamentKnockoutComponent },
+            { path: 'leaderboard', component: TournamentLeaderboardComponent },
+        ]
+    },
 
     // Demo Routing
-    {path: '', component: DashboardDemoComponent},
-    {path: 'sample', component: SampleDemoComponent},
-    {path: 'forms', component: FormsDemoComponent},
-    {path: 'data', component: DataDemoComponent},
-    {path: 'panels', component: PanelsDemoComponent},
-    {path: 'overlays', component: OverlaysDemoComponent},
-    {path: 'menus', component: MenusDemoComponent},
-    {path: 'messages', component: MessagesDemoComponent},
-    {path: 'misc', component: MiscDemoComponent},
-    {path: 'empty', component: EmptyDemoComponent},
-    {path: 'charts', component: ChartsDemoComponent},
-    {path: 'file', component: FileDemoComponent},
-    {path: 'utils', component: UtilsDemoComponent},
-    {path: 'documentation', component: DocumentationComponent}
+    { path: '', component: DashboardDemoComponent },
+    { path: 'sample', component: SampleDemoComponent },
+    { path: 'forms', component: FormsDemoComponent },
+    { path: 'data', component: DataDemoComponent },
+    { path: 'panels', component: PanelsDemoComponent },
+    { path: 'overlays', component: OverlaysDemoComponent },
+    { path: 'menus', component: MenusDemoComponent },
+    { path: 'messages', component: MessagesDemoComponent },
+    { path: 'misc', component: MiscDemoComponent },
+    { path: 'empty', component: EmptyDemoComponent },
+    { path: 'charts', component: ChartsDemoComponent },
+    { path: 'file', component: FileDemoComponent },
+    { path: 'utils', component: UtilsDemoComponent },
+    { path: 'documentation', component: DocumentationComponent }
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);
