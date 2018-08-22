@@ -1,0 +1,21 @@
+.leaderboard table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.leaderboard table tr {
+}
+
+.leaderboard table tbody tr:nth-child(even) {
+    background-color: lightblue;
+}
+
+.leaderboard table tbody tr td {
+    text-align: center;
+}
+
+.leaderboard table tbody tr td:nth-child(3) {
+    font-weight: bold;
+}
+

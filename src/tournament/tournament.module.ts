@@ -4,10 +4,14 @@ import { TournamentComponent } from './components/tournament/tournament.componen
 import { TournamentLeaderboardComponent } from './components/tournament-leaderboard/tournament-leaderboard.component';
 import { TournamentPouleComponent } from './components/tournament-poule/tournament-poule.component';
 import { TournamentKnockoutComponent } from './components/tournament-knockout/tournament-knockout.component';
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
     imports: [
         SharedModule,
+        TableModule,
+        PanelModule,
     ],
     declarations: [
         TournamentComponent,
