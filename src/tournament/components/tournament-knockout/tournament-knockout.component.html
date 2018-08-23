@@ -1,1 +1,85 @@
-Dit is de knockout component
+<p-panel>
+    <p-header>
+        <div style="float: left;">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+                <input type="text" pInputText placeholder="Search">
+            </div>
+        </div>
+    </p-header>
+    <main>
+        <ng-container *ngFor="let knockout of knockouts">
+            <div class="round">
+                <div class="spacer">
+                    <div class="knock-out-name">{{knockout?.name}}</div>
+                </div>
+                <ng-container *ngFor="let game of knockout.games">
+                    <div title="Actual score" class="game game-top" [class.winner]="game?.actualWinner==1" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered"
+                        (mouseover)="game.mouseOvered=true" (mouseout)="game.mouseOvered=false">{{game?.homeTeam}}<span>{{game?.actualHomeTeamGoals}}</span></div>
+                    <div class="game game-spacer" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered" (mouseover)="game.mouseOvered=true"
+                        (mouseout)="game.mouseOvered=false">
+                        <div style="display: flex; height: 100%; align-items: center; justify-content: center;">{{game?.gameDate
+                            | date: 'MMM d, y, h:mm a'}}<span *ngIf="game?.userHomeTeamGoals != null" style="margin-left: 20px; font-weight: bold"
+                                title="Entered score">{{game?.userHomeTeamGoals}}-{{game?.userAwayTeamGoals}}</span><span *ngIf="game?.actualHomeTeamGoals != null"
+                                style="margin-left: 20px; font-weight: bold; color:#dd9944">{{game?.coinsWon}}</span></div>
+                    </div>
+                    <div title="Actual score" class="game game-bottom" [class.winner]="game?.actualWinner==2" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered"
+                        (mouseover)="game.mouseOvered=true" (mouseout)="game.mouseOvered=false">{{game?.awayTeam}}<span>{{game?.actualAwayTeamGoals}}</span></div>
+
+                    <div class="spacer">&nbsp;</div>
+                </ng-container>
+            </div>
+        </ng-container>
+    </main>
+    <!--Third Place Play-Off-->
+    <main style="width: 40%; margin-left: auto; margin-right: 0">
+        <div class="round">
+            <div class="spacer">
+                <div class="knock-out-name">{{knockOutThirdPlace?.name}}</div>
+            </div>
+            <ng-container *ngFor="let game of knockOutThirdPlace?.games">
+                <div title="Actual score" class="game game-top" [class.winner]="game?.actualWinner==1" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered"
+                    (mouseover)="game.mouseOvered=true" (mouseout)="game.mouseOvered=false">{{game?.homeTeam}}<span>{{game?.actualHomeTeamGoals
+                        ? game?.actualHomeTeamGoals : '0'}}</span></div>
+                <div class="game game-spacer" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered" (mouseover)="game.mouseOvered=true"
+                    (mouseout)="game.mouseOvered=false">
+                    <div style="display: flex; height: 100%; align-items: center; justify-content: center;">{{game?.gameDate
+                        | date: 'MMM d, y, h:mm a'}}<span *ngIf="game?.userHomeTeamGoals != null" style="margin-left: 20px; font-weight: bold"
+                            title="Entered score">{{game?.userHomeTeamGoals}}-{{game?.userAwayTeamGoals}}</span><span *ngIf="game?.actualHomeTeamGoals != null"
+                            style="margin-left: 20px; font-weight: bold; color:#dd9944">{{game?.coinsWon}}</span></div>
+                </div>
+                <div title="Actual score" class="game game-bottom" [class.winner]="game?.actualWinner==2" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered"
+                    (mouseover)="game.mouseOvered=true" (mouseout)="game.mouseOvered=false">{{game?.awayTeam}}<span>{{game?.actualAwayTeamGoals
+                        ? game?.actualAwayTeamGoals : '0'}}</span></div>
+
+                <div class="spacer">&nbsp;</div>
+            </ng-container>
+        </div>
+    </main>
+</p-panel>
+
+
+
+
+<!-- <p-dialog [(visible)]="displayDialog" header="My prediction" width="500" modal="true" dismissableMask="true" baseZIndex="1040"
+    appendTo="body">
+    <div *ngIf="deepCopyGame" style="text-align: center">
+        <label style="display: block">Score after 90/120 minutes</label>
+        <div class="form-group">
+            <input type="text" pInputText [(ngModel)]="deepCopyGame.homeTeam" disabled />
+            <p-spinner size="3" [(ngModel)]="deepCopyGame.userHomeTeamGoals" [min]="0" (onChange)="onChangeSpinner(deepCopyGame)"></p-spinner>
+        </div>
+        <div class="form-group">
+            <input type="text" pInputText [(ngModel)]="deepCopyGame.awayTeam" disabled />
+            <p-spinner size="3" [(ngModel)]="deepCopyGame.userAwayTeamGoals" [min]="0" (onChange)="onChangeSpinner(deepCopyGame)"></p-spinner>
+        </div>
+        <label style="display: block">Winner<span *ngIf="deepCopyGame.userHomeTeamGoals == deepCopyGame.userAwayTeamGoals">
+            penalties</span></label>
+        <p-selectButton [options]="types" [(ngModel)]="deepCopyGame.userWinner"></p-selectButton>
+    </div>
+    <p-footer>
+        <div class="ui-helper-clearfix">
+            <button *ngIf="deepCopyGame" type="button" pButton icon="fa-check" (click)="saveScores(deepCopyGame)" label="Save" [disabled]="!deepCopyGame.userWinner || checkEditable(deepCopyGame.gameDate)"></button>
+        </div>
+    </p-footer>
+</p-dialog> -->

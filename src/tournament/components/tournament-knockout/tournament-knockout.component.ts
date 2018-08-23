@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TournamentService } from '../../services/tournament.service';
+import { Knockout } from '../../classes/knockout';
+import { KnockoutService } from '../../services/knockout.service';
 
 @Component({
     selector: 'tournament-knockout',
@@ -8,12 +9,15 @@ import { TournamentService } from '../../services/tournament.service';
 })
 export class TournamentKnockoutComponent  {
 
-    constructor(private tournamentService: TournamentService) { }
+    knockouts: Knockout[];
+
+    constructor(private knockoutService: KnockoutService) { }
 
     ngOnInit() {
-        this.tournamentService.getAllTournaments().subscribe(
-            tournaments => {
-                console.log(tournaments);
+        this.knockoutService.getAllKnockOutsByTournamentIdAndUserId(1, 1).subscribe(
+            knockouts => {
+                this.knockouts = knockouts;
+                console.log(knockouts);
             }
         );
     }

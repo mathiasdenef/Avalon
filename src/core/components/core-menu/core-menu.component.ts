@@ -28,9 +28,9 @@ export class CoreMenuComponent implements OnInit {
     ngOnInit() {
         this.model = [
             { label: 'Tournaments', icon: 'fa fa-fw fa-home', routerLink: ['/tournaments'] },
-            { label: 'Poules', icon: 'fa fa-fw fa-home', routerLink: ['/tournaments/poules'] },
-            { label: 'Knockouts', icon: 'fa fa-fw fa-home', routerLink: ['/tournaments/knockouts'] },
-            { label: 'Leaderboard', icon: 'fa fa-fw fa-home', routerLink: ['/tournaments/leaderboard'] },
+            { label: 'Poules', icon: 'fa fa-fw fa-list', routerLink: ['/tournaments/poules'] },
+            { label: 'Knockouts', icon: 'fa fa-fw fa-trophy', routerLink: ['/tournaments/knockouts'] },
+            { label: 'Leaderboard', icon: 'fa fa-fw fa-chart-line', routerLink: ['/tournaments/leaderboard'] },
             {
                 label: 'Demo', icon: 'fa fa-fw  fa-tags',
                 items: [
