@@ -5,6 +5,9 @@ import { RouterModule } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -16,6 +19,9 @@ import { ButtonModule } from 'primeng/button';
         DialogModule,
         TableModule,
         ButtonModule,
+        InputTextModule,
+        DropdownModule,
+        CheckboxModule,
     ],
     declarations: [
 
@@ -29,6 +35,9 @@ import { ButtonModule } from 'primeng/button';
         DialogModule,
         TableModule,
         ButtonModule,
+        InputTextModule,
+        DropdownModule,
+        CheckboxModule,
     ],
     providers: [
     ]

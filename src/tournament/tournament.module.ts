@@ -6,12 +6,16 @@ import { TournamentPouleComponent } from './components/tournament-poule/tourname
 import { TournamentKnockoutComponent } from './components/tournament-knockout/tournament-knockout.component';
 import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
     imports: [
         SharedModule,
+
+        // PrimeNG
         TableModule,
         PanelModule,
+        PaginatorModule,
     ],
     declarations: [
         TournamentComponent,
