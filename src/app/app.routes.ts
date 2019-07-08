@@ -16,9 +16,11 @@ import { FileDemoComponent } from './demo/view/filedemo.component';
 import { UtilsDemoComponent } from './demo/view/utilsdemo.component';
 import { DocumentationComponent } from './demo/view/documentation.component';
 import { AppCustomerComponent } from './components/app-customer/app-customer.component';
+import { WeatherComponent } from './modules/weather/components/weather/weather.component';
 
 export const routes: Routes = [
     {path: 'dashboard', component: AppDashboardComponent},
+    {path: 'weather', component: WeatherComponent},
     {path: 'customer', component: AppCustomerComponent},
 
     // Demo Routing

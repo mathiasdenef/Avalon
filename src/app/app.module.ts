@@ -14,6 +14,7 @@ import { CoreModule } from '../core/core.module';
 import { DemoModule } from '../demo/demo.module';
 import { AppCustomerComponent } from './components/app-customer/app-customer.component';
 import { SharedModule } from '../shared/shared.module';
+import { WeatherModule } from './modules/weather/weather.module';
 
 @NgModule({
     imports: [
@@ -21,6 +22,8 @@ import { SharedModule } from '../shared/shared.module';
         SharedModule,
         AppRoutes,
         CoreModule,
+        WeatherModule,
+
         DemoModule,
     ],
     declarations: [
