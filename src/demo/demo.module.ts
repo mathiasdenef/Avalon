@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { AccordionModule, AutoCompleteModule, BreadcrumbModule, ButtonModule, CalendarModule, CarouselModule, ColorPickerModule, ChartModule, CheckboxModule, ChipsModule, CodeHighlighterModule, ConfirmDialogModule, ContextMenuModule, DataGridModule, DataListModule, DataScrollerModule, DataTableModule, DialogModule, DragDropModule, DropdownModule, EditorModule, FieldsetModule, FileUploadModule, GalleriaModule, GMapModule, GrowlModule, InputMaskModule, InputSwitchModule, InputTextModule, InputTextareaModule, LightboxModule, ListboxModule, MegaMenuModule, MenuModule, MenubarModule, MessagesModule, MultiSelectModule, OrderListModule, OrganizationChartModule, OverlayPanelModule, PaginatorModule, PanelModule, PanelMenuModule, PasswordModule, PickListModule, ProgressBarModule, RadioButtonModule, RatingModule, ScheduleModule, ScrollPanelModule, SelectButtonModule, SlideMenuModule, SliderModule, SpinnerModule, SplitButtonModule, StepsModule, TabMenuModule, TabViewModule, TerminalModule, TieredMenuModule, ToggleButtonModule, ToolbarModule, TooltipModule, TreeModule, TreeTableModule } from 'primeng/primeng';
+import { AccordionModule, AutoCompleteModule, BreadcrumbModule, ButtonModule, CalendarModule, CarouselModule, ColorPickerModule, ChartModule, CheckboxModule, ChipsModule, CodeHighlighterModule, ConfirmDialogModule, ContextMenuModule, DataGridModule, DataListModule, DataScrollerModule, DialogModule, DragDropModule, DropdownModule, EditorModule, FieldsetModule, FileUploadModule, GalleriaModule, GMapModule, GrowlModule, InputMaskModule, InputSwitchModule, InputTextModule, InputTextareaModule, LightboxModule, ListboxModule, MegaMenuModule, MenuModule, MenubarModule, MessagesModule, MultiSelectModule, OrderListModule, OrganizationChartModule, OverlayPanelModule, PaginatorModule, PanelModule, PanelMenuModule, PasswordModule, PickListModule, ProgressBarModule, RadioButtonModule, RatingModule, ScheduleModule, ScrollPanelModule, SelectButtonModule, SlideMenuModule, SliderModule, SpinnerModule, SplitButtonModule, StepsModule, TabMenuModule, TabViewModule, TerminalModule, TieredMenuModule, ToggleButtonModule, ToolbarModule, TooltipModule, TreeModule, TreeTableModule } from 'primeng/primeng';
 import { DataViewModule } from 'primeng/dataview';
 import { TableModule } from 'primeng/table';
 import { DashboardDemoComponent } from '../app/demo/view/dashboarddemo.component';
@@ -43,7 +43,6 @@ import { NodeService } from '../app/demo/service/nodeservice';
         DataGridModule,
         DataListModule,
         DataScrollerModule,
-        DataTableModule,
         DataViewModule,
         DialogModule,
         DragDropModule,
