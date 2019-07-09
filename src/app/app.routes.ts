@@ -22,20 +22,20 @@ export const routes: Routes = [
     {path: 'customer', component: AppCustomerComponent},
 
     // Demo Routing
-    {path: '', component: DashboardDemoComponent},
-    {path: 'sample', component: SampleDemoComponent},
-    {path: 'forms', component: FormsDemoComponent},
-    {path: 'data', component: DataDemoComponent},
-    {path: 'panels', component: PanelsDemoComponent},
-    {path: 'overlays', component: OverlaysDemoComponent},
-    {path: 'menus', component: MenusDemoComponent},
-    {path: 'messages', component: MessagesDemoComponent},
-    {path: 'misc', component: MiscDemoComponent},
-    {path: 'empty', component: EmptyDemoComponent},
-    {path: 'charts', component: ChartsDemoComponent},
-    {path: 'file', component: FileDemoComponent},
-    {path: 'utils', component: UtilsDemoComponent},
-    {path: 'documentation', component: DocumentationComponent}
+    // {path: '', component: DashboardDemoComponent},
+    // {path: 'sample', component: SampleDemoComponent},
+    // {path: 'forms', component: FormsDemoComponent},
+    // {path: 'data', component: DataDemoComponent},
+    // {path: 'panels', component: PanelsDemoComponent},
+    // {path: 'overlays', component: OverlaysDemoComponent},
+    // {path: 'menus', component: MenusDemoComponent},
+    // {path: 'messages', component: MessagesDemoComponent},
+    // {path: 'misc', component: MiscDemoComponent},
+    // {path: 'empty', component: EmptyDemoComponent},
+    // {path: 'charts', component: ChartsDemoComponent},
+    // {path: 'file', component: FileDemoComponent},
+    // {path: 'utils', component: UtilsDemoComponent},
+    // {path: 'documentation', component: DocumentationComponent}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -11,7 +11,6 @@ import { EventService } from './demo/service/eventservice';
 import { NodeService } from './demo/service/nodeservice';
 import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.component';
 import { CoreModule } from '../core/core.module';
-import { DemoModule } from '../demo/demo.module';
 import { AppCustomerComponent } from './components/app-customer/app-customer.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -21,7 +20,6 @@ import { SharedModule } from '../shared/shared.module';
         SharedModule,
         AppRoutes,
         CoreModule,
-        DemoModule,
     ],
     declarations: [
         AppComponent,

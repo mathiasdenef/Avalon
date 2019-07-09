@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Customer } from '../../classes/customer';
-import { Column } from '../../classes/column';
+import { Customer } from '../../models/customer';
+import { Column } from '../../models/column';
 import { CustomerService } from '../../services/customer.service';
 
 @Component({
     selector: 'app-customer',
     templateUrl: './app-customer.component.html',
-    styleUrls: ['./app-customer.component.scss']
+    styleUrls: ['./app-customer.component.css']
 })
 export class AppCustomerComponent  {
 
