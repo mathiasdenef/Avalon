@@ -11,7 +11,7 @@ enum MenuOrientation {
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit {
 
@@ -43,7 +43,7 @@ export class AppComponent implements AfterViewInit {
 
     menuHoverActive: boolean;
 
-    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ScrollPanel;
+    @ViewChild('layoutMenuScroller', {static: true}) layoutMenuScrollerViewChild: ScrollPanel;
 
     constructor(public renderer: Renderer2) { }
 
