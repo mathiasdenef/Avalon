@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tournament } from '../classes/tournament';
-import { LeaderboardUser } from '../classes/leaderboard-user';
+import { Tournament } from '../../app/models/tournament';
+import { LeaderboardUser } from '../../app/models/leaderboard-user';
 
 @Injectable({
   providedIn: 'root'

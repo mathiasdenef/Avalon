@@ -15,18 +15,18 @@ import { ChartsDemoComponent } from './demo/view/chartsdemo.component';
 import { FileDemoComponent } from './demo/view/filedemo.component';
 import { UtilsDemoComponent } from './demo/view/utilsdemo.component';
 import { DocumentationComponent } from './demo/view/documentation.component';
-import { TournamentComponent } from '../tournament/components/tournament/tournament.component';
-import { TournamentPouleComponent } from '../tournament/components/tournament-poule/tournament-poule.component';
-import { TournamentKnockoutComponent } from '../tournament/components/tournament-knockout/tournament-knockout.component';
-import { TournamentLeaderboardComponent } from '../tournament/components/tournament-leaderboard/tournament-leaderboard.component';
+import { AppTournamentComponent } from './components/app-tournament/app-tournament.component';
+import { AppPouleComponent } from './components/app-poule/app-poule.component';
+import { AppKnockoutComponent } from './components/app-knockout/app-knockout.component';
+import { AppLeaderboardComponent } from './components/app-leaderboard/app-leaderboard.component';
 
 export const routes: Routes = [
     {
         path: 'tournaments', children: [
-            { path: '', component: TournamentComponent },
-            { path: 'poules', component: TournamentPouleComponent },
-            { path: 'knockouts', component: TournamentKnockoutComponent },
-            { path: 'leaderboard', component: TournamentLeaderboardComponent },
+            { path: '', component: AppTournamentComponent },
+            { path: 'poules', component: AppPouleComponent },
+            { path: 'knockouts', component: AppKnockoutComponent },
+            { path: 'leaderboard', component: AppLeaderboardComponent },
         ]
     },
 

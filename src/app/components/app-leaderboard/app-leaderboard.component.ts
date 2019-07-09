@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { TournamentService } from '../../services/tournament.service';
-import { DropdownOption } from '../../../app/classes/dropdown-option';
+import { DropdownOption } from 'src/app/models/dropdown-option';
+import { TournamentService } from 'src/app/services/tournament.service';
 
 @Component({
-    selector: 'tournament-leaderboard',
-    templateUrl: './tournament-leaderboard.component.html',
-    styleUrls: ['./tournament-leaderboard.component.scss']
+    selector: 'app-leaderboard',
+    templateUrl: './app-leaderboard.component.html',
+    styleUrls: ['./app-leaderboard.component.scss']
 })
-export class TournamentLeaderboardComponent {
+export class AppLeaderboardComponent {
 
     departments: DropdownOption[];
 

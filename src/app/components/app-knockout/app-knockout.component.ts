@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Knockout } from '../../classes/knockout';
-import { KnockoutService } from '../../services/knockout.service';
+import { Knockout } from '../../models/knockout';
+import { KnockoutService } from 'src/app/services/knockout.service';
 
 @Component({
-    selector: 'tournament-knockout',
-    templateUrl: './tournament-knockout.component.html',
-    styleUrls: ['./tournament-knockout.component.scss']
+    selector: 'app-knockout',
+    templateUrl: './app-knockout.component.html',
+    styleUrls: ['./app-knockout.component.scss']
 })
-export class TournamentKnockoutComponent  {
+export class AppKnockoutComponent  {
 
     knockouts: Knockout[];
 

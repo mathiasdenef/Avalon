@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { TournamentService } from '../../services/tournament.service';
+import { TournamentService } from 'src/app/services/tournament.service';
+
 
 @Component({
-    selector: 'tournament-poule',
-    templateUrl: './tournament-poule.component.html',
-    styleUrls: ['./tournament-poule.component.scss']
+    selector: 'app-poule',
+    templateUrl: './app-poule.component.html',
+    styleUrls: ['./app-poule.component.scss']
 })
-export class TournamentPouleComponent  {
+export class AppPouleComponent  {
 
     constructor(private tournamentService: TournamentService) { }
 

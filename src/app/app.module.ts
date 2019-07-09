@@ -12,7 +12,11 @@ import { NodeService } from './demo/service/nodeservice';
 import { AppDashboardComponent } from './components/app-dashboard/app-dashboard.component';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module';
-import { TournamentModule } from '../tournament/tournament.module';
+import { AppKnockoutComponent } from './components/app-knockout/app-knockout.component';
+import { AppPouleComponent } from './components/app-poule/app-poule.component';
+import { AppTournamentComponent } from './components/app-tournament/app-tournament.component';
+import { AppLeaderboardComponent } from './components/app-leaderboard/app-leaderboard.component';
+import { PanelModule, PaginatorModule } from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -20,11 +24,18 @@ import { TournamentModule } from '../tournament/tournament.module';
         SharedModule,
         AppRoutes,
         CoreModule,
-        TournamentModule,
+
+        //PrimeNG Modules
+        PanelModule,
+        PaginatorModule,
     ],
     declarations: [
         AppComponent,
+        AppTournamentComponent,
         AppDashboardComponent,
+        AppLeaderboardComponent,
+        AppKnockoutComponent,
+        AppPouleComponent,
     ],
     providers: [
         // { provide: LocationStrategy, useClass: HashLocationStrategy },
