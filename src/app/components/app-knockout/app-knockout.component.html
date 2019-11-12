@@ -35,9 +35,9 @@
     <main style="width: 40%; margin-left: auto; margin-right: 0">
         <div class="round">
             <div class="spacer">
-                <div class="knock-out-name">{{knockOutThirdPlace?.name}}</div>
+                <!-- <div class="knock-out-name">{{knockOutThirdPlace?.name}}</div> -->
             </div>
-            <ng-container *ngFor="let game of knockOutThirdPlace?.games">
+            <!-- <ng-container *ngFor="let game of knockOutThirdPlace?.games">
                 <div title="Actual score" class="game game-top" [class.winner]="game?.actualWinner==1" (click)="clickedGame(game)" [class.highlight]="game.mouseOvered"
                     (mouseover)="game.mouseOvered=true" (mouseout)="game.mouseOvered=false">{{game?.homeTeam}}<span>{{game?.actualHomeTeamGoals
                         ? game?.actualHomeTeamGoals : '0'}}</span></div>
@@ -53,7 +53,7 @@
                         ? game?.actualAwayTeamGoals : '0'}}</span></div>
 
                 <div class="spacer">&nbsp;</div>
-            </ng-container>
+            </ng-container> -->
         </div>
     </main>
 </p-panel>

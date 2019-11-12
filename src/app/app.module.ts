@@ -10,10 +10,6 @@ import { AppLeaderboardComponent } from './components/app-leaderboard/app-leader
 import { AppPouleComponent } from './components/app-poule/app-poule.component';
 import { AppTournamentComponent } from './components/app-tournament/app-tournament.component';
 import { AppComponent } from './components/app/app.component';
-import { CarService } from './demo/service/carservice';
-import { CountryService } from './demo/service/countryservice';
-import { EventService } from './demo/service/eventservice';
-import { NodeService } from './demo/service/nodeservice';
 import { CalculatorModule } from './modules/calculator/calculator.module';
 
 
@@ -39,7 +35,6 @@ import { CalculatorModule } from './modules/calculator/calculator.module';
     ],
     providers: [
         // { provide: LocationStrategy, useClass: HashLocationStrategy },
-        CarService, CountryService, EventService, NodeService
     ],
     bootstrap: [AppComponent]
 })

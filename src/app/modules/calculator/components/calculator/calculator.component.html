@@ -4,24 +4,24 @@
         <input class="diplay" type="text" [value]="valueString" name="diplay">
         <input class="displayed" type="text" [value]="result" name="diplayed">
         <br><br><br>
-        <input class="button" type="button" name="1" value="1" (click)="add(1)">
-        <input class="button" type="button" name="2" value="2" (click)="add(2)">
-        <input class="button" type="button" name="3" value="3" (click)="add(3)">
+        <input class="button" type="button" name="1" value="1" (click)="add('1')">
+        <input class="button" type="button" name="2" value="2" (click)="add('2')">
+        <input class="button" type="button" name="3" value="3" (click)="add('3')">
         <input class="button" type="button" name="ce" value="+" (click)="add('+')">
 
         <br><br>
-        <input class=" button" type="button" name="4" value="4"(click)="add(4)">
-        <input class="button" type="button" name="5" value="5" (click)="add(5)">
-        <input class="button" type="button" name="6" value="6" (click)="add(6)">
+        <input class=" button" type="button" name="4" value="4"(click)="add('4')">
+        <input class="button" type="button" name="5" value="5" (click)="add('5')">
+        <input class="button" type="button" name="6" value="6" (click)="add('6')">
         <input class="button" type="button" name="-" value="-" (click)="add('-')">
         <br><br>
-        <input class="button" type="button" name="7" value="7" (click)="add(7)">
-        <input class="button" type="button" name="8" value="8"(click)="add(8)">
-        <input class="button" type="button" name="9" value="9" (click)="add(9)">
+        <input class="button" type="button" name="7" value="7" (click)="add('7')">
+        <input class="button" type="button" name="8" value="8"(click)="add('8')">
+        <input class="button" type="button" name="9" value="9" (click)="add('9')">
         <input class="button" type="button" name="*" value="*" (click)="add('*')">
         <br><br>
-        <input id="btnc" class="button" type="button" name="C" value="C" (click)="add(-1)">
-        <input class="button" type="button" name="0" value="0" (click)="add(0)">
+        <input id="btnc" class="button" type="button" name="C" value="C" (click)="add('-1')">
+        <input class="button" type="button" name="0" value="0" (click)="add('0')">
         <input class="button" type="button" name="=" value="=" (click)="calculate()">
         <input class="button" type="button" name="/" value="/" (click)="add('/')">
     </form>
