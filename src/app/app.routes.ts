@@ -19,8 +19,10 @@ import { AppTournamentComponent } from './components/app-tournament/app-tourname
 import { AppPouleComponent } from './components/app-poule/app-poule.component';
 import { AppKnockoutComponent } from './components/app-knockout/app-knockout.component';
 import { AppLeaderboardComponent } from './components/app-leaderboard/app-leaderboard.component';
+import { CalculatorComponent } from './modules/calculator/components/calculator/calculator.component';
 
 export const routes: Routes = [
+    { path: 'calculator', component: CalculatorComponent },
     {
         path: 'tournaments', children: [
             { path: '', component: AppTournamentComponent },
@@ -29,6 +31,8 @@ export const routes: Routes = [
             { path: 'leaderboard', component: AppLeaderboardComponent },
         ]
     },
+
+
 
     // Demo Routing
     // {path: '', component: DashboardDemoComponent},
