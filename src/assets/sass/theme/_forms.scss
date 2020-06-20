@@ -17,24 +17,20 @@ body {
             @include focused-input();
         }
 
-        &.ng-dirty {
-            border: 1px solid $inputInvalidBorderColor;
+        &.ng-dirty.ng-invalid {
+            background-color: $inputInvalidBgColor;
 
-            &.ng-invalid {
-                background-color: $inputInvalidBgColor;
+            &:hover {
+                border-color: $inputInvalidBorderColor;
+            }
 
-                &:hover {
-                    border-color: $inputInvalidBorderColor;
-                }
+            &:focus {
+                border-color: $inputInvalidBorderColor;
+                box-shadow: none;
+            }
 
-                &:focus {
-                    border-color: $inputInvalidBorderColor;
-                    box-shadow: none;
-                }
-
-                &:active {
-                    border-color: $inputInvalidBorderColor;
-                }
+            &:active {
+                border-color: $inputInvalidBorderColor;
             }
         }
 
@@ -87,6 +83,8 @@ body {
         }
 
         &.ui-button-icon-only {
+            width: 2.143em;
+
             .ui-button-text {
                 padding: 0.429em;
             }
@@ -232,6 +230,55 @@ body {
         }
     }
 
+    .light-btn.ui-button,
+    .light-btn > .ui-button,
+    .ui-splitbutton.light-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-light,
+    .ui-buttonset.ui-button-light > .ui-button.ui-state-default  {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+
+        &:enabled:hover {
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(248,249,250,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #dae0e5;
+            border-color: #d3d9df;
+        }
+    }
+
+    .dark-btn.ui-button,
+    .dark-btn > .ui-button,
+    .ui-splitbutton.dark-btn > .ui-button,
+    .ui-button.ui-state-default.ui-button-dark,
+    .ui-buttonset.ui-button-dark > .ui-button.ui-state-default {
+        background-color: #343a40;
+        border-color: #343a40;
+
+        &:enabled:hover {
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            @include shadow(0 0 0 0.2rem rgba(52,58,64,.5));
+        }
+
+        &:enabled:active  {
+            background-color: #1d2124;
+            border-color: #171a1d;
+        }
+    }
+
     .ui-fluid {
         .ui-button-icon-only {
             width: 2.143em;
@@ -358,36 +405,80 @@ body {
         height: 2em;
         @include transition(background-color $transitionDuration, border-color $transitionDuration, box-shadow $transitionDuration);
 
-        .ui-inputswitch-on {
-            background-color: $highlightBgColor;
-            color: $highlightTextColor;
-            font-weight: normal;
-        }
-
-        .ui-inputswitch-off {
-            background-color: #a8acb1;
+        .ui-inputswitch-slider {
+            background-color: #ffffff;
             color: #ffffff;
-            font-weight: normal;
+            border: 1px solid $contentBorderColor;
+            @include border-radius(4px);
+            @include transition(background-color .3s);
 
-            .ui-inputswitch-offlabel {
-                position: relative;
-                left: 1px;
+            &:before {
+                background-color: #a8acb1;
+                border: 1px solid transparent;
+                height: 1.7em;
+                width: 1.429em;
+                left: 0;
+                bottom: 0;
+                border-radius: 0;
+                border-bottom-left-radius: 3px;
+                -webkit-border-bottom-left-radius: 3px;
+                -moz-border-radius-bottomleft: 3px;
+                border-top-left-radius: 3px;
+                -webkit-border-top-left-radius: 3px;
+                -moz-border-radius-topleft: 3px;
+                -webkit-transition: $transitionDuration;
+                transition: $transitionDuration;
             }
         }
 
-        .ui-inputswitch-on,
-        .ui-inputswitch-off {
-            line-height: 2em;
+        &.ui-inputswitch-checked {
+            .ui-inputswitch-slider:before {
+                -webkit-transform: translateX(1.28em);
+                -ms-transform: translateX(1.28em);
+                transform: translateX(1.28em);
+            }
         }
 
-        .ui-inputswitch-handle {
-            background-color: $inputBgColor;
-            border: 1px solid transparent;
-            @include transition(background-color $transitionDuration);
+        &.ui-inputswitch-focus {
+            .ui-inputswitch-slider {
+                @include focused-input();
+                background-color: $inputBgColor;
+            }
         }
 
-        &.ui-state-focus {
-            @include focused-input();
+        &:not(.ui-state-disabled):hover {
+            .ui-inputswitch-slider {
+                background-color: $inputBgColor;
+            }
+        }
+
+        &.ui-inputswitch-checked {
+            .ui-inputswitch-slider {
+                background-color: $inputBgColor;
+
+                &:before {
+                    background-color: $highlightBgColor;
+                    border-radius: 0;
+                    border-bottom-right-radius: 3px;
+                    -webkit-border-bottom-right-radius: 3px;
+                    -moz-border-radius-bottomright: 3px;
+                    border-top-right-radius: 3px;
+                    -webkit-border-top-right-radius: 3px;
+                    -moz-border-radius-topright: 3px;
+                }
+            }
+
+            &:not(.ui-state-disabled):hover {
+                .ui-inputswitch-slider {
+                    background-color: $inputBgColor;
+                }
+            }
+
+            &.ui-inputswitch-focus {
+                .ui-inputswitch-slider {
+                    background-color: $inputBgColor;
+                }
+            }
         }
     }
 
@@ -397,10 +488,6 @@ body {
             padding: .06em;
             border-left: 0 none;
             @include input-shadow-vertical();
-
-            .pi {
-                @include icon_override("\f0d7");
-            }
 
             &:enabled:focus {
                 outline: 0 none;
@@ -559,7 +646,6 @@ body {
 
             .pi-caret-down {
                 color: $textColor;
-                @include icon_override("\f0d7");
                 line-height: inherit;
                 margin-top: -1em;
             }
@@ -608,7 +694,7 @@ body {
                 padding: $listItemPadding;
                 @include border-radius(0);
 
-                &:not(.ui-state-highlight):hover {
+                &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
                     @include list-item-hover();
                 }
 
@@ -639,9 +725,7 @@ body {
             @include box-sizing(border-box);
 
             .pi {
-                line-height: inherit;
                 color: $textSecondaryColor;
-                @include icon_override("\f0d7");
             }
         }
 
@@ -753,14 +837,14 @@ body {
                     }
                 }
 
-                label {
+                > span {
                     padding: 0;
                     margin: 0 0 0 0.615em;
                     display: inline-block;
                     vertical-align: middle;
                 }
 
-                &:not(.ui-state-highlight):hover {
+                &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
                     border-radius: 0;
                     @include list-item-hover();
                 }
@@ -1088,11 +1172,31 @@ body {
         }
 
         &:not(.ui-state-disabled) {
+            .ui-datepicker-header {
+                .ui-datepicker-prev,
+                .ui-datepicker-next {
+                    &:hover {
+                        color: $headerIconHoverColor;
+                    }
+
+                    &:focus {
+                        outline: 0 none;
+                        color: $headerIconHoverColor;
+                    }
+                }
+            }
+
             table {
                 td:not(.ui-state-disabled) {
                     a:not(.ui-state-active):not(.ui-state-highlight):hover {
                         background-color: $listItemHoverBgColor;
                     }
+                }
+            }
+
+            .ui-monthpicker {
+                a.ui-monthpicker-month:not(.ui-state-active):hover {
+                    background-color: $listItemHoverBgColor;
                 }
             }
         }
@@ -1106,34 +1210,14 @@ body {
 
             .ui-datepicker-prev {
                 cursor: pointer;
-                top: 1.2em;
                 color: $headerIconColor;
-                @include icon_override("\f053");
                 @include transition(color $transitionDuration);
-
-                span {
-                    display: none;
-                }
-
-                &:hover {
-                    color: $headerIconHoverColor;
-                }
             }
 
             .ui-datepicker-next {
                 cursor: pointer;
-                top: 1.2em;
                 color: $headerIconColor;
-                @include icon_override("\f054");
                 @include transition(color $transitionDuration);
-
-                span {
-                    display: none;
-                }
-
-                &:hover {
-                    color: $headerIconHoverColor;
-                }
             }
         }
 
@@ -1143,13 +1227,17 @@ body {
             td {
                 padding: 2px;
 
-                a,span {
+                > a, > span {
                     min-width: 2em;
                     min-height: 2em;
                     text-align: center;
                     color: $textColor;
                     padding: .35em;
                     @include border-radius($borderRadius);
+                }
+
+                > a {
+                    cursor: pointer;
 
                     &:hover {
                         background-color: $listItemHoverBgColor;
@@ -1164,12 +1252,18 @@ body {
                         color: $textColor;
                         background-color: $dividerColor;
                     }
+
                 }
 
                 &.ui-datepicker-today {
                     a {
                         background-color: $dividerColor;
                         color: $textColor;
+
+                        &.ui-state-active {
+                            color: $highlightTextColor;
+                            background-color: $highlightBgColor;
+                        }
                     }
                 }
             }
@@ -1184,6 +1278,42 @@ body {
 
                 &:hover {
                     color: $headerIconHoverColor;
+                }
+            }
+        }
+
+        .ui-monthpicker {
+             .ui-monthpicker-month {
+                 color: $textColor;
+
+                 &.ui-state-active {
+                     color: $primaryTextColor;
+                     background-color: $highlightBgColor;
+                 }
+             }
+         }
+
+        &.ui-datepicker-multiple-month {
+            width: auto;
+            .ui-datepicker-group {
+                border-right: 1px solid $dividerColor;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .ui-datepicker-calendar-container {
+                    tbody {
+                        padding-right: .25em;
+                        padding-left: .25em;
+                    }
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                    border-right: 0 none;
                 }
             }
         }
@@ -1282,6 +1412,10 @@ body {
         }
     }
 
+    .ui-calendar .ui-datepicker {
+        min-width: auto;
+    }
+
     .ui-datepicker{
         width: auto;
     }
@@ -1290,4 +1424,22 @@ body {
     :-moz-placeholder           {color:$textSecondaryColor}
     ::-moz-placeholder          {color:$textSecondaryColor}
     :-ms-input-placeholder      {color:$textSecondaryColor}
+
+    /* Validations */
+    .ui-inputtext.ng-dirty.ng-invalid,
+    p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
+    p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext,
+    p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext,
+    p-chips.ng-dirty.ng-invalid > .ui-inputtext,
+    p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
+    p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
+    p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
+    p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
+    p-listbox.ng-dirty.ng-invalid .ui-inputtext,
+    p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
+    p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
+    p-selectbutton.ng-dirty.ng-invalid .ui-button,
+    p-togglebutton.ng-dirty.ng-invalid .ui-button {
+        border-color: $inputInvalidBorderColor;
+    }
 }
