@@ -46,7 +46,7 @@
     "mssql": "^4.1.0",
     "primeicons": "1.0.0-beta.9",
     "primeng": "^8.1.1",
-    "quill": "1.1.8",
+    "quill": "1.3.7",
     "rxjs": "6.5.2",
     "rxjs-compat": "^6.2.2",
     "web-animations-js": "2.3.1",
