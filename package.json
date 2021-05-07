@@ -40,7 +40,7 @@
     "fullcalendar": "^3.5.1",
     "intl": "1.2.5",
     "jquery": "3.2.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "moment": "2.19.3",
     "msnodesqlv8": "^0.8.0",
     "mssql": "^4.1.0",
